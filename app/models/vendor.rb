@@ -3,7 +3,6 @@ class Vendor < ApplicationRecord
 
   validates :first_name, presence: { message: "First name can't be empty" }
   validates :last_name, presence: { message: "Last name can't be empty" }
-  # defualt message will be "Email has already been taken"
   validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /[a-zA-Z]+[0-9]*[a-zA-Z]*@[a-zA-Z]+\.com/ }
 
   before_validation :remove_whitespace
