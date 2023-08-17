@@ -7,6 +7,8 @@ class Customer < ApplicationRecord
 
   before_validation :remove_whitespace
 
+  default_scope { order(:first_name) }
+
   def remove_whitespace
     self.first_name = self.first_name.strip.squeeze(" ")
     self.last_name = self.last_name.strip.squeeze(" ")

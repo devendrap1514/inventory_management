@@ -5,6 +5,8 @@ class Product < ApplicationRecord
   validates :name, :brand_name, presence: true
   validates :vendor, presence: true
 
+  default_scope { order(:name) }
+
   scope :search, ->(text) {
     ActiveRecord::Base.connection.execute(
       "SELECT pv.id AS 'product variant id', p.name, p.brand_name, pv.length, pv.width FROM products AS p INNER JOIN product_variants AS pv
