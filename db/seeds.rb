@@ -41,3 +41,6 @@ end
 p "initialize product varient data"
 
 
+Cart.create(customer_id: 1, product_variant_id:1, quantity: 1)
+Cart.create(customer_id: 3, product_variant_id:4, quantity: 1)
+Cart.create(customer_id: 2, product_variant_id:17, quantity: 1)

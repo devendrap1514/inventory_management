@@ -1,5 +1,5 @@
 class Customer < ApplicationRecord
-  has_many :carts
+  has_many :carts, dependent: :destroy
 
   validates :first_name, presence: { message: "First name can't be empty" }
   validates :last_name, presence: { message: "Last name can't be empty" }
