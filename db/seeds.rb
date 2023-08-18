@@ -41,9 +41,9 @@ end
 p "initialize product varient data"
 
 
-Cart.increase_quantity_if_exist_and_save(customer_id: 1, product_variant_id:1)
-Cart.increase_quantity_if_exist_and_save(customer_id: 3, product_variant_id:4)
-Cart.increase_quantity_if_exist_and_save(customer_id: 2, product_variant_id:17)
-Cart.increase_quantity_if_exist_and_save(customer_id: 1, product_variant_id:1)
+Cart.increase_quantity_if_exist_and_save(1, 1)
+Cart.increase_quantity_if_exist_and_save(3, 4)
+Cart.increase_quantity_if_exist_and_save(2, 17)
+Cart.increase_quantity_if_exist_and_save(1, 1)
 
 p "initialize cart data"
