@@ -13,4 +13,12 @@ class Cart < ApplicationRecord
       @obj.save
     end
   }
+
+
+  scope :cart_info, -> {
+    ActiveRecord::Base.connection.execute(
+      "SELECT p.name, p.brand_name, pv.length, pv.width, c.first_name FROM carts INNER JOIN product_variants AS pv
+      ON carts.product_variant_id = pv.id INNER JOIN products AS p ON p.id = pv.product_id INNER JOIN customers AS c ON c.id = carts.customer_id")
+  }
+
 end
